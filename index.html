@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>経営シミュレーション</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="company-name" id="companyName">会社未設立</div>
+      <div class="day" id="day">DAY 1</div>
+    </div>
+    <div class="money">
+      <span>資金</span>
+      <strong id="money">¥1,000,000</strong>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="stat"><span>売上</span><strong id="sales">¥0</strong></div>
+      <div class="stat"><span>利益</span><strong id="profit">¥0</strong></div>
+      <div class="stat"><span>顧客数</span><strong id="customers">0</strong></div>
+      <div class="stat"><span>評判</span><strong id="reputation">50</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">📰 今日のニュース</div>
+      <div id="news">会社を設立して経営を始めましょう。</div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">📦 商品</div>
+      <div class="product-card">
+        <div>
+          <h2 id="productName">商品未設定</h2>
+          <p>原価：<strong id="productCost">¥0</strong></p>
+          <p>価格：<strong id="productPrice">¥0</strong></p>
+          <p>品質：<strong id="productQuality">50</strong></p>
+        </div>
+        <button onclick="openPriceDialog()">価格変更</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">📊 今日の経営判断</div>
+      <div class="actions">
+        <button onclick="advertising()">📢 広告<small>¥10,000</small></button>
+        <button onclick="developProduct()">🔬 商品開発<small>¥20,000</small></button>
+        <button onclick="marketResearch()">🔎 市場調査<small>¥5,000</small></button>
+        <button onclick="restDay()">📅 1日を終了<small>販売結果を確定</small></button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">📈 今日の結果</div>
+      <div id="result">まだ今日の経営結果はありません。</div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">📚 経営履歴</div>
+      <div id="history"></div>
+    </section>
+  </main>
+
+  <div id="startScreen" class="overlay">
+    <div class="start-card">
+      <h1>経営シミュレーション</h1>
+      <p>あなた自身の判断で会社を作り、経営してください。</p>
+      <input id="companyInput" type="text" placeholder="会社名を入力" maxlength="30">
+      <input id="productInput" type="text" placeholder="最初の商品名" maxlength="30">
+      <button onclick="startGame()">会社を設立する</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
